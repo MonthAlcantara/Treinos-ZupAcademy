@@ -1,7 +1,7 @@
 package io.github.monthalcantara.casadocodigo.dto.request;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import io.github.monthalcantara.casadocodigo.model.Autor;
+import io.github.monthalcantara.casadocodigo.validation.ValorUnico;
 import lombok.Getter;
 import lombok.ToString;
 
@@ -16,12 +16,16 @@ public class AutorDto {
 
     @NotBlank
     private String nome;
+
     @Email
     @NotBlank
+    @ValorUnico(aClass = Autor.class, field = "email", message = "Já existe um autor com esse email")
     private String email;
+
     @NotBlank
     @Size(max = 400)
     private String descricao;
+
     private LocalDateTime instant;
 
     private AutorDto() {
