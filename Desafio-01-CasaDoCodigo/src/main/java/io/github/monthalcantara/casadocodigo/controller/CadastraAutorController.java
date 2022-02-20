@@ -1,7 +1,7 @@
 package io.github.monthalcantara.casadocodigo.controller;
 
-import io.github.monthalcantara.casadocodigo.dto.request.AutorDto;
-import io.github.monthalcantara.casadocodigo.dto.response.AutorResponseDto;
+import io.github.monthalcantara.casadocodigo.dto.request.NovoAutorDto;
+import io.github.monthalcantara.casadocodigo.dto.response.AutorResponse;
 import io.github.monthalcantara.casadocodigo.repository.AutorRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,10 +28,10 @@ public class CadastraAutorController {
 
     @PostMapping
     @Transactional
-    public ResponseEntity<AutorResponseDto> cadastraAutor(@Valid @RequestBody AutorDto autorDto) {
-        log.info("Recebida request para cadastro de novo autor: {}", autorDto);
+    public ResponseEntity<AutorResponse> cadastraAutor(@Valid @RequestBody NovoAutorDto novoAutorDto) {
+        log.info("Recebida request para cadastro de novo autor: {}", novoAutorDto);
 
-        final var autor = autorDto.toModel();
+        final var autor = novoAutorDto.toModel();
 
         log.info("Realizada conversão para o modelo de autor: {}", autor);
 
@@ -39,7 +39,7 @@ public class CadastraAutorController {
 
         log.info("Autor cadastrado no banco com id {}", autor.getId());
 
-        final var autorResponseDto = new AutorResponseDto(autor);
+        final var autorResponseDto = new AutorResponse(autor);
 
         return ResponseEntity.ok(autorResponseDto);
     }
