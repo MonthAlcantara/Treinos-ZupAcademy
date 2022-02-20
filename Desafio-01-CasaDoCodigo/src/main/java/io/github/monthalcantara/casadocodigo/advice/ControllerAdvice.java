@@ -1,7 +1,5 @@
 package io.github.monthalcantara.casadocodigo.advice;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import io.github.monthalcantara.casadocodigo.exception.RecursoNaoEncontradoException;
 import lombok.Getter;
@@ -40,7 +38,6 @@ public class ControllerAdvice {
         ErrosApi errosApi = new ErrosApi(List.of(exception.getMensagem()), exception.getCampo());
         return new ResponseEntity<>(errosApi, HttpStatus.UNPROCESSABLE_ENTITY);
     }
-
 
 
     @Getter

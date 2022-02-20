@@ -2,12 +2,9 @@ package io.github.monthalcantara.casadocodigo.model;
 
 import lombok.Getter;
 import lombok.ToString;
-import org.springframework.util.Assert;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Getter
@@ -51,7 +48,6 @@ public class Autor {
 
         public AutorBuilder nome(String nome) {
             this.nome = nome;
-            Assert.hasText(nome, "O campo nome deve ser preenchido");
             return this;
         }
 
