@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 
 @Getter
 @ToString
-public class AutorDto {
+public class NovoAutorDto {
 
     @NotBlank
     private String nome;
@@ -28,7 +28,7 @@ public class AutorDto {
 
     private LocalDateTime instant;
 
-    private AutorDto() {
+    private NovoAutorDto() {
     }
 
     public Autor toModel() {

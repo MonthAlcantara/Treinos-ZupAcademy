@@ -1,0 +1,218 @@
+{
+	"info": {
+		"_postman_id": "cff5c280-304f-4f4e-bc86-b0110d5202c7",
+		"name": "API Casa do Codigo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "cria Livros",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo\" : \"teste2\",\r\n    \"resumo\" : \"asodmaodmoamdsaasodmaodmoamdsaasodmaodmoamdsaasodmaodmoamdsaasodmaodmoamdsaasodmaodmoamdsaasodmaodmoamdsaasodasodmaodmoamdsaasodmaodmoamdsaasodmaodmoamdsaasodmaodmoamdsaasodmaodmoamdsaasodmaodmoamdsaasodmaod\",\r\n    \"sumario\" : \"siasjdijaisjoijad\",\r\n    \"preco\": 21.00,\r\n    \"numeroPaginas\" : 150,\r\n    \"isbn\" : \"9788582715437\",\r\n    \"dataPublicacao\" : \"25-12-2022\",\r\n    \"categoria\" : 1,\r\n    \"autor\" : 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/livros",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"livros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cria categorias",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"nome\" : \"ingles\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/categorias",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categorias"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cria autores",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"nome\":\"Month Alcantara\",\r\n   \"email\": \"montival_junior@yahoo.com.br\",\r\n   \"descricao\" : \"Alguma descrição\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/autores",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"autores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BuscaTodosOsLivros",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/livros/produtos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"livros",
+						"produtos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscaLivroPeloId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/livros/produtos/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"livros",
+						"produtos",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CadastraCupon",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"codigo\" : \"DESCONTAO100\",\r\n    \"desconto\" : 10.0,\r\n    \"validade\" : \"24/11/2021\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/cupons",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cupons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/compras/finaliza/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/compras/finaliza/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"compras",
+						"finaliza",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/pagamentos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"montival_junior@yahoo.com.br\",\r\n    \"nome\" : \"Montival\",\r\n    \"sobrenome\" : \"junior\",\r\n    \"documento\" : \"20908234023\",\r\n    \"endereco\" : \"Rua Damião Gomes de Melo\",\r\n    \"complemento\" : \" apt 305\",\r\n    \"cidade\": \"Lauro de Freitas\",\r\n    \"paisId\" : 1,\r\n    \"estadoId\" :1,\r\n    \"telefone\" : \"71 993410330\",\r\n    \"cep\" : \"42702790\",\r\n    \"itens\" : [\r\n        {\r\n            \"quantidade\" : 1,\r\n            \"idLivro\" : 1\r\n        }\r\n    ],\r\n    \"idCupom\" : 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/pagamentos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pagamentos"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

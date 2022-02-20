@@ -10,17 +10,17 @@ import java.time.LocalDateTime;
 
 @Getter
 @ToString
-public class AutorResponseDto {
+public class AutorResponse {
 
     private Long id;
     private String nome;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm")
     private LocalDateTime instant;
 
-    private AutorResponseDto() {
+    private AutorResponse() {
     }
 
-    public AutorResponseDto(Autor autor) {
+    public AutorResponse(Autor autor) {
         this.nome = autor.getNome();
         this.instant = autor.getInstant();
         this.id = autor.getId();
