@@ -1,4 +1,4 @@
-package io.github.monthalcantara.casadocodigo.controller;
+package io.github.monthalcantara.casadocodigo.controller.categoria;
 
 import io.github.monthalcantara.casadocodigo.dto.request.NovaCategoriaDto;
 import io.github.monthalcantara.casadocodigo.dto.response.CategoriaResponse;

@@ -1,4 +1,4 @@
-package io.github.monthalcantara.casadocodigo.controller;
+package io.github.monthalcantara.casadocodigo.controller.livro;
 
 import io.github.monthalcantara.casadocodigo.dto.request.NovoLivroDto;
 import io.github.monthalcantara.casadocodigo.dto.response.LivroResponse;

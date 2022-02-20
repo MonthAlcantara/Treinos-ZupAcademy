@@ -12,7 +12,7 @@ import javax.validation.constraints.NotBlank;
 public class NovaCategoriaDto {
 
     @NotBlank
-    @ValorUnico(aClass = Categoria.class, field = "nome", message = "O nome deve ser informado")
+    @ValorUnico(aClass = Categoria.class, field = "nome", message = "O nome informado ja possui registro")
     private String nome;
 
     public NovaCategoriaDto(String nome) {
