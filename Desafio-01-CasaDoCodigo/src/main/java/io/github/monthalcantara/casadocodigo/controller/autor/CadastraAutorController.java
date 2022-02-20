@@ -1,4 +1,4 @@
-package io.github.monthalcantara.casadocodigo.controller;
+package io.github.monthalcantara.casadocodigo.controller.autor;
 
 import io.github.monthalcantara.casadocodigo.dto.request.NovoAutorDto;
 import io.github.monthalcantara.casadocodigo.dto.response.AutorResponse;

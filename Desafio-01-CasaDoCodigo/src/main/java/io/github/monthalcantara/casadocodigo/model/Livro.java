@@ -46,6 +46,9 @@ public class Livro {
         return this;
     }
 
+    private Livro() {
+    }
+
     public static LivroBuilder Builder() {
         return new LivroBuilder();
     }
