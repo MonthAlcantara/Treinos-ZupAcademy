@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +32,12 @@ public class ControllerAdvice {
     public ResponseEntity<String> methodArgumentNotValidException(Exception exception) {
 
         return ResponseEntity.internalServerError().body("Erro interno. Por favor contate a equipe responsável");
+    }
+
+    @ExceptionHandler(ResponseStatusException.class)
+    public ResponseEntity<String> methodArgumentNotValidException(ResponseStatusException exception) {
+
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(RecursoNaoEncontradoException.class)
