@@ -13,6 +13,7 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestControllerAdvice
@@ -23,25 +24,31 @@ public class ControllerAdvice {
         List<ErrosApi> collect = methodArgumentNotValidException
                 .getBindingResult().getFieldErrors()
                 .stream()
-                .map(f -> new ErrosApi(f.getDefaultMessage(), f.getField(), Objects.requireNonNull(f.getRejectedValue()).toString()))
+                .map(f -> new ErrosApi(f.getDefaultMessage(), f.getField(), Optional.ofNullable(f.getRejectedValue()).map(Objects::toString).orElse("")))
                 .collect(Collectors.toList());
         return ResponseEntity.badRequest().body(collect);
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<String> methodArgumentNotValidException(Exception exception) {
+    public ResponseEntity<String> exception(Exception exception) {
 
         return ResponseEntity.internalServerError().body("Erro interno. Por favor contate a equipe responsável");
     }
 
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<ErrosApi> illegalArgumentException(IllegalArgumentException exception) {
+        ErrosApi errosApi = new ErrosApi(List.of(exception.getMessage()));
+        return new ResponseEntity<>(errosApi, HttpStatus.UNPROCESSABLE_ENTITY);
+    }
+
     @ExceptionHandler(ResponseStatusException.class)
-    public ResponseEntity<String> methodArgumentNotValidException(ResponseStatusException exception) {
+    public ResponseEntity<String> responseStatusException(ResponseStatusException exception) {
 
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(RecursoNaoEncontradoException.class)
-    public ResponseEntity<ErrosApi> methodArgumentNotValidException(RecursoNaoEncontradoException exception) {
+    public ResponseEntity<ErrosApi> recursoNaoEncontradoException(RecursoNaoEncontradoException exception) {
         ErrosApi errosApi = new ErrosApi(List.of(exception.getMensagem()), exception.getCampo());
         return new ResponseEntity<>(errosApi, HttpStatus.UNPROCESSABLE_ENTITY);
     }
