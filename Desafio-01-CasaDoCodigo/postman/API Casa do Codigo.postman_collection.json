@@ -138,13 +138,13 @@
 			"response": []
 		},
 		{
-			"name": "CadastraCupon",
+			"name": "salvaPais",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"codigo\" : \"DESCONTAO100\",\r\n    \"desconto\" : 10.0,\r\n    \"validade\" : \"24/11/2021\"\r\n\r\n}",
+					"raw": "{\r\n    \"nome\": \"Brasilzis\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -152,48 +152,27 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/cupons",
+					"raw": "http://localhost:8080/pais",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"cupons"
+						"pais"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "http://localhost:8080/compras/finaliza/1",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/compras/finaliza/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"compras",
-						"finaliza",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8080/pagamentos",
+			"name": "SalvaEstado",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\" : \"montival_junior@yahoo.com.br\",\r\n    \"nome\" : \"Montival\",\r\n    \"sobrenome\" : \"junior\",\r\n    \"documento\" : \"20908234023\",\r\n    \"endereco\" : \"Rua Damião Gomes de Melo\",\r\n    \"complemento\" : \" apt 305\",\r\n    \"cidade\": \"Lauro de Freitas\",\r\n    \"paisId\" : 1,\r\n    \"estadoId\" :1,\r\n    \"telefone\" : \"71 993410330\",\r\n    \"cep\" : \"42702790\",\r\n    \"itens\" : [\r\n        {\r\n            \"quantidade\" : 1,\r\n            \"idLivro\" : 1\r\n        }\r\n    ],\r\n    \"idCupom\" : 1\r\n}",
+					"raw": "{\r\n    \"nome\":\"Bahia\",\r\n    \"paisId\": 1\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -201,14 +180,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/pagamentos",
+					"raw": "http://localhost:8080/estados",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"pagamentos"
+						"estados"
 					]
 				}
 			},
