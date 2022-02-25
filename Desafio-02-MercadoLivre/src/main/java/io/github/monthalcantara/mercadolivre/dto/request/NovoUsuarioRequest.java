@@ -1,7 +1,9 @@
 package io.github.monthalcantara.mercadolivre.dto.request;
 
+import io.github.monthalcantara.mercadolivre.entity.UsuarioEntity;
 import io.github.monthalcantara.mercadolivre.model.SenhaLimpa;
 import io.github.monthalcantara.mercadolivre.model.Usuario;
+import io.github.monthalcantara.mercadolivre.validation.ValorUnico;
 import lombok.Getter;
 import org.hibernate.validator.constraints.Length;
 
@@ -13,6 +15,7 @@ import java.time.LocalDateTime;
 public class NovoUsuarioRequest {
 
     @NotBlank
+    @ValorUnico(aClass = UsuarioEntity.class, field = "login", message = "Ja existe um registro com esse login registrado")
     @Email
     private String login;
 

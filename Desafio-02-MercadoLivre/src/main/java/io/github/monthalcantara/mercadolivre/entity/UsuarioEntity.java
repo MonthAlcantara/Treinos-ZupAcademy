@@ -38,10 +38,6 @@ public class UsuarioEntity {
         this.instanteCriacao = usuario.getInstanteCriacao();
     }
 
-    public Long getId() {
-        return this.getId();
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
