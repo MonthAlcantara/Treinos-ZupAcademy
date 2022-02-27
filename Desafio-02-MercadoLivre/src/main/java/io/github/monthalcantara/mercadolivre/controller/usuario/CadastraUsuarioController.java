@@ -1,4 +1,4 @@
-package io.github.monthalcantara.mercadolivre.controller;
+package io.github.monthalcantara.mercadolivre.controller.usuario;
 
 import io.github.monthalcantara.mercadolivre.core.Processor;
 import io.github.monthalcantara.mercadolivre.dto.request.NovoUsuarioRequest;
