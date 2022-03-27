@@ -1,11 +1,13 @@
 package io.github.monthalcantara.mercadolivre.entity;
 
 import io.github.monthalcantara.mercadolivre.model.Usuario;
+import lombok.Getter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+@Getter
 @Entity
 @Table(name = "usuarios", indexes = @Index(unique = true, name = "login", columnList = "login"))
 public class UsuarioEntity {
