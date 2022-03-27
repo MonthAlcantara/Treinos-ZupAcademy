@@ -1,0 +1,1 @@
+insert into usuarios (login, senha, instante_criacao) values ('aluno@email.com', '$2a$10$zcHUETLu8ue39CL7c3dEgucxqORbjXwi94.M9PHbnwOGDElCiWuqC', '2022-02-28T11:27:29.917375600')

@@ -31,16 +31,6 @@ public class CadastraCategoriaProcessorImpl implements Processor<Categoria> {
         }else{
             categoriaRepository.save(new CategoriaEntity(categoria.getNome()));
         }
-
-//        if (categoriaMaeId != null) {
-//            Optional<CategoriaEntity> categoriaEncontrada = categoriaRepository.findById(categoriaMaeId);
-//            categoriaEntity = new CategoriaEntity(categoria.getNome(), categoriaEncontrada.get());
-//        } else {
-//
-//            categoriaEntity = new CategoriaEntity(categoria.getNome());
-//        }
-//        categoriaRepository.save(categoriaEntity);
-
         return categoria;
     }
 }
