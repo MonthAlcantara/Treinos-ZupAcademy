@@ -10,7 +10,18 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>io.github.monthalcantara.proposta</artifactId>
-
+    <dependencies>
+        <dependency>
+            <groupId>io.github.monthalcantara</groupId>
+            <artifactId>io.github.monthalcantara.domain</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.monthalcantara</groupId>
+            <artifactId>io.github.monthalcantara.core</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
     <properties>
         <maven.compiler.source>15</maven.compiler.source>
         <maven.compiler.target>15</maven.compiler.target>

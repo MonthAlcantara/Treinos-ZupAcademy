@@ -11,12 +11,12 @@
         <module name="Repository" />
         <module name="Domain" />
         <module name="Application" />
+        <module name="Desafio03" />
         <module name="Core" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Application" target="15" />
-      <module name="Desafio03" target="11" />
       <module name="Domain" target="15" />
       <module name="Proposta" target="15" />
       <module name="Repository" target="15" />
