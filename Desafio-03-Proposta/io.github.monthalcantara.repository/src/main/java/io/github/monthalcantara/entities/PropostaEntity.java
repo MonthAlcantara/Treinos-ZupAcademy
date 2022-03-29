@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 
 @Getter
 @Entity
-@Table(name = "propostas")
+@Table(name = "propostas", indexes = {@Index(name = "documento", columnList = "cpfOuCnpj")})
 public class PropostaEntity {
 
     @Id
