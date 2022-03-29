@@ -1,4 +1,4 @@
-package io.github.monthalcantar.processor;
+package io.github.monthalcantara.processor;
 
 public interface Processor<T> {
 
